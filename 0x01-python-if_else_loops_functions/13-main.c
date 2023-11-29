@@ -29,16 +29,6 @@ int main(void)
 
 	print_listint(head);
 
-	printf("-----------------\n");
-
-	insert_node(&head, -4);
-
-	print_listint(head);
-	printf("-----------------\n");
-
-	insert_node(&head, 1024);
-
-	print_listint(head);
 	free_listint(head);
 
 	return (0);
