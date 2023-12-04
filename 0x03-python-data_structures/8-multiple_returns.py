@@ -3,6 +3,7 @@
 def multiple_returns(sentence):
     """A function that returns a tuple with the lenght of a string and its first
     character"""
-    if sentence == "":
+    if not sentence:
         return (0, None)
-    return (len(sentence), sentence[0])
+    else:
+        return (len(sentence), sentence[0])
