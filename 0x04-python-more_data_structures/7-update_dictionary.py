@@ -7,3 +7,5 @@ def update_dictionary(a_dictionary, key, value):
         a_dictionary[key] = value
     else:
         a_dictionary[key] = value
+        for key, value in my_dict.items():
+            print(f"{key}: {value}")
