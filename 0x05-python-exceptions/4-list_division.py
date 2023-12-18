@@ -11,7 +11,6 @@ def list_division(my_list_1, my_list_2, list_length):
     Returns:
         A new list of length list_length containing all the divisions.
     """
-    result = []
 
     for i in range(list_length):
         try:
@@ -28,10 +27,6 @@ def list_division(my_list_1, my_list_2, list_length):
 
             result.append(division_result)
 
-        except TypeError:
-            print("wrong type")
-            result.append(0)
-
         except ZeroDivisionError:
             print("division by 0")
             result.append(0)
@@ -40,7 +35,11 @@ def list_division(my_list_1, my_list_2, list_length):
             print("out of range")
             result.append(0)
 
+        except TypeError:
+            print("wrong type")
+            result.append(0)
+
         finally:
-            result.append(division_result)
+            pass
 
     return (result)
