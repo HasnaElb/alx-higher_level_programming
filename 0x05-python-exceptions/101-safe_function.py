@@ -14,8 +14,8 @@ def safe_function(fct, *args):
         Any: The result of the function if successful, None otherwise.
     """
     try:
-        num = fct(*args)
-        return num
+        result = fct(*args)
+        return result
     except (ValueError, TypeError) as err:
         print("Exception: {}".format(err), file=sys.stderr)
         return None
