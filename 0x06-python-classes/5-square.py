@@ -16,7 +16,7 @@ class Square:
     @property
     def size(self):
         """Get/set the current size of the square."""
-        return (self.__size)
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -32,8 +32,9 @@ class Square:
 
     def my_print(self):
         """Print the square with the # character."""
-        for i in range(0, self.__size):
-            [print("#", end="") for j in range(self._size)]
-            print("")
         if self.__size == 0:
             print("")
+        else:
+            for i in range(self.__size):
+                [print("#", end="") for j in range(self.__size)]
+                print("")
