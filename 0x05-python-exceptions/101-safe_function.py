@@ -3,6 +3,16 @@ import sys
 
 
 def safe_function(fct, *args):
+    """
+    Safely calls a function with provided arguments and handles exceptions.
+
+    Args:
+        fct (callable): The callable object to be executed.
+        *args: Variable number of arguments to be passed to the callable.
+
+    Returns:
+        Any: The result of the function if successful, None otherwise.
+    """
     try:
         num = fct(*args)
         return num
