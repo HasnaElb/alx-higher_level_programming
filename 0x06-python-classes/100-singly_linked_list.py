@@ -17,11 +17,7 @@ class Node:
 
     @property
     def data(self):
-        """Get/set the data of the Node.
-
-        Args:
-            value (int): The new data of the None.
-        """
+        """Get/set the data of the Node."""
         return (self.__data)
 
     @data.setter
@@ -58,25 +54,25 @@ class SinglyLinkedList:
         Args:
             value (Node): The new Node to insert.
         """
-        new = Node(value)
+        new_node = Node(value)
         if self.__head is None:
-            new.next_node = None
-            self.__head = new
-        elif self.__head.dat > value:
-            new.next_node = self.__head
-            self.__head = new
+            new_node.next_node = None
+            self.__head = new_node
+        elif self.__head.data > value:
+            new_node.next_node = self.__head
+            self.__head = new_node
         else:
             tmp = self.__head
             while (tmp.next_node is not None and
                     tmp.next_node.data < value):
                 tmp = tmp.next_node
-            new.next_node = tmp.next_node
-            tmp.next_node = new
+            new_node.next_node = tmp.next_node
+            tmp.next_node = new_node
 
     def __str__(self):
         """Define the print() representation of a SinglyLinkedList."""
         values = []
-        tmp self.__head
+        tmp = self.__head
         while tmp is not None:
             values.append(str(tmp.data))
             tmp = tmp.next_node
