@@ -17,7 +17,11 @@ class Node:
 
     @property
     def data(self):
-        """Get/set the data of the Node."""
+        """Get/set the data of the Node.
+
+        Args:
+            value (int): The new data of the None.
+        """
         return (self.__data)
 
     @data.setter
