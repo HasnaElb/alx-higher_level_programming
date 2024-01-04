@@ -49,7 +49,21 @@ class Rectangle(object):
 
     def perimeter(self):
         """ return int value of perimeter """
-        if self.__width == 0 or self.__height == 0:
-            return 0
-        else:
+        if self.__width or self.__height != 0:
             return ((self.__height + self.__width) * 2)
+        else:
+            return 0
+
+    def __str__(self):
+        """Returns a printable string"""
+
+        if self.__width == 0 or self.__height == 0:
+            return ""
+
+        string = ""
+        for i in range(self.__height):
+            if i == self.__height - 1:
+                string += self.__width * '#'
+            else:
+                string += self.__width * '#' + '\n'
+        return string
