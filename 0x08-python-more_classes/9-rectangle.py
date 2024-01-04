@@ -2,6 +2,8 @@
 """
     class rectangle
     @width, @height must be integer number >= 0
+    cls: the parameter that points to the class
+    size (int): The size of the square
 """
 
 
