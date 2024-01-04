@@ -18,7 +18,7 @@ class Rectangle(object):
         """ init for height and width """
         self.height = height
         self.width = width
-        Rectangle.number_of_instances = + 1
+        Rectangle.number_of_instances =+ 1
 
     @property
     def width(self):
@@ -28,7 +28,7 @@ class Rectangle(object):
     @width.setter
     def width(self, value):
         """ setter method for width """
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
             raise ValueError("width must be >= 0")
