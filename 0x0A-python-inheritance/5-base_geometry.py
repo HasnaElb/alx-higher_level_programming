@@ -3,5 +3,5 @@
 
 
 class BaseGeometry(object):
-"""new class"""
-pass
+	"""new class"""
+	pass
