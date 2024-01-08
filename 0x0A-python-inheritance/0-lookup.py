@@ -1,14 +1,10 @@
 #!/usr/bin/python3
+"""Returns the list of attribute and methods of an object"""
 
 
 def lookup(obj):
-    """Returns the list of available attributes and methods of an object.
-
-    Args:
-    obj (any): object of any type
-
-    Returns:
-    list of available attributes and methods
-
+    """
+    The dir() method tries to return a list
+    of valid attributes of the object.
     """
     return dir(obj)
