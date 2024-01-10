@@ -56,14 +56,13 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([5, .544, True]), 5)
 
     def test_higher_list_dimensions(self):
-    """First dimension list members can themselves also be iterables (except
-    sets, as they always return <list>[0].) Those iterables can be of
-    varying length in the same dimension, but must all be of the same
-    dimensional depth to avoid a TypeError in comparison. For comparison of
-    any values in elements with dimensions beyond the first, it will always
-    be the first value to be compared by the program: <list>[i][0][0]...,
-    <list>[i + 1][0][0]..., ...
-    """
+        """First dimension list members can themselves also be iterables (except
+        sets, as they always return <list>[0].) Those iterables can be of
+        varying length in the same dimension, but must all be of the same
+        dimensional depth to avoid a TypeError in comparison. For comparison of
+        any values in elements with dimensions beyond the first, it will always
+        be the first value to be compared by the program: <list>[i][0][0]...,
+        <list>[i + 1][0][0]..., ..."""
         # 2nd dimension lists of variable length but same depth
         self.assertEqual(max_integer([[5, 4, 1], [6, 3], []]), [6, 3])
         # same for tuples and strings
