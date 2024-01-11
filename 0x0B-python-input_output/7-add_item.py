@@ -1,19 +1,36 @@
 #!/usr/bin/python3
 """
-funtion for read and safe argv in
-Json format in file
+Function to read and save argv in JSON format in a file
 """
 import sys
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+from json import load, dump
 
-filename = "add_item.json"
-my_list = []
-try:
-    my_list = load_from_json_file(filename)
-except:
-    pass
-finally:
-    for idx in range(1, len(sys.argv)):
-        my_list.append(sys.argv[idx])
-    save_to_json_file(my_list, filename)
+
+def load_from_json_file(filename):
+    """Load JSON data from file"""
+    try:
+        with open(filename, 'r') as file:
+            return load(file)
+        except FileNotFoundError:
+            return []
+
+
+def save_to_json_file(data, filename):
+    """Save JSON data to file"""
+    with open(filename, 'w') as file:
+        dump(data, file)
+
+
+def main():
+    """Main function"""
+    json_filename = "add_item.json"
+    my_list = load_from_json_file(json_filename)
+
+    for arg in sys.argv[1:]:
+        my_list.append(arg)
+
+    save_to_json_file(my_list, json_filename)
+
+
+if __name__ == "__main__":
+    main()
