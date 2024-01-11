@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-function for read and safe argv in JSON format in file
+funtion for read and safe argv in
+Json format in file
 """
 import sys
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
@@ -10,8 +11,8 @@ filename = "add_item.json"
 my_list = []
 try:
     my_list = load_from_json_file(filename)
-except
-pass
+except:
+    pass
 finally:
     for idx in range(1, len(sys.argv)):
         my_list.append(sys.argv[idx])
