@@ -10,8 +10,8 @@ argv_edit = argv[1:]
 
 try:
     content_list = load_from_json_file("add_item.json")
-except:
-    content_list = []
+except
+content_list = []
 finally:
     for arg in argv_edit:
         content_list.append(arg)
