@@ -11,8 +11,12 @@ if __name__ == "__main__":
     try:
         json_dict = response.json()
     except ValueError:
-        print('No result' if response.status_code == 204
-                else 'Not a valid JSON')
+        if response.status_code == 204:
+            print('No result')
+        else:
+            print('Not a valid JSON')
     else:
-        print('No result' if not json_dict else '[{}] {}'.format
-                (json_dict.get('id'), json_dict.get('name')))
+        if not json_dict:
+            print('No result')
+        else:
+            print('[{}] {}'.format(json_dict.get('id'), json_dict.get('name')))
